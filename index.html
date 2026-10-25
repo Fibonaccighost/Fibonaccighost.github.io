@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Projects and products I've built.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+    <header class="top">
+      <a class="top-name" href="#" id="top-name"></a>
+      <nav class="top-nav" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button type="button" class="btn" data-action="download">Download resume</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-figure" aria-hidden="true"><canvas data-figure="product"></canvas></div>
+        <div class="hero-text">
+          <h1 class="hero-name" id="hero-name"></h1>
+          <p class="hero-role" id="hero-role"></p>
+          <p class="hero-intro" id="hero-intro"></p>
+        </div>
+      </section>
+
+      <!-- Past projects: pinned while you scroll; projects slide in from the left, going back in time -->
+      <section class="work" id="work" aria-labelledby="work-h">
+        <div class="work-pin">
+          <div class="work-track" id="track">
+            <article class="panel panel-intro">
+              <canvas class="intro-ribbons" data-ribbons aria-hidden="true"></canvas>
+              <div class="intro">
+                <h2 id="work-h">Past projects</h2>
+                <p class="intro-lead" id="intro-lead"></p>
+                <div class="intro-cue" aria-hidden="true">
+                  <svg viewBox="0 0 400 40" preserveAspectRatio="none">
+                    <path d="M6 20H394" stroke="#000" stroke-width="1"/>
+                    <path d="M6 27H394" stroke="#000" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+                    <path d="M6 20l12-8M6 20l12 8" stroke="#000" stroke-width="1" fill="none"/>
+                    <circle cx="394" cy="20" r="4" fill="#000"/>
+                  </svg>
+                  <div class="intro-cue-labels"><span id="cue-past"></span><span>Now</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="timeline" aria-hidden="true">
+            <p class="tl-current" id="tl-current"></p>
+            <div class="tl-bar">
+              <span class="tl-end" id="tl-past"></span>
+              <div class="tl-line" id="tl-line"><span class="tl-dot" id="tl-dot"></span></div>
+              <span class="tl-end">Now</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience" aria-labelledby="exp-h">
+        <div class="section-head">
+          <h2 id="exp-h">Experience</h2>
+        </div>
+        <ol class="roles" id="roles"></ol>
+      </section>
+
+      <section class="about" id="about" aria-label="About">
+        <div class="step">
+          <div class="step-text">
+            <h2 id="step1-h"></h2>
+            <p id="step1-p"></p>
+          </div>
+          <div class="step-figure tile" aria-hidden="true"><canvas data-figure="number"></canvas></div>
+        </div>
+        <div class="step">
+          <div class="step-text">
+            <h2 id="step2-h"></h2>
+            <p id="step2-p"></p>
+          </div>
+          <div class="step-figure tile" aria-hidden="true"><canvas data-figure="system"></canvas></div>
+        </div>
+        <div class="step">
+          <div class="step-text">
+            <h2 id="step3-h"></h2>
+            <p id="step3-p"></p>
+          </div>
+          <div class="step-figure tile" aria-hidden="true"><canvas data-figure="map"></canvas></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-box" id="contact-box">
+          <p class="contact-lead">Get in touch</p>
+          <a class="contact-email" id="contact-email"></a>
+          <p class="contact-alt" id="contact-alt"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p id="foot-copy"></p>
+      <p class="foot-actions">
+        <button type="button" class="link" data-action="preview">Preview resume</button>
+        <button type="button" class="link" data-action="download">Download resume</button>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Resume layout: hidden on screen, shown when previewing or printing -->
+  <article class="resume" id="resume" aria-hidden="true"></article>
+  <button type="button" class="btn resume-exit" data-action="preview">Back to portfolio</button>
+
+  <script src="data.js"></script>
+  <script src="figures.js"></script>
+  <script src="draw.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
